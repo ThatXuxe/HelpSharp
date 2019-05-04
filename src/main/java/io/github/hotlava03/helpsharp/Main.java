@@ -25,19 +25,13 @@ public class Main extends JavaPlugin implements CommandExecutor {
         logger.info("Thank you for using HelpSharp 1.0-SNAPSHOT by HotLava03. Plugin is loading...");
         config = this.getConfig();
         helpCommandName = config.getString("helpCmdName");
-        this.getCommand("helpsharpreload").setExecutor(this);
+        this.getCommand("helpsharpreload").setExecutor(new ReloadCmd(this));
         this.getCommand("helpsharp").setExecutor(new MainCmd(this));
         this.getCommand(helpCommandName).setExecutor(new ServHelpCmd(this));
     }
 
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
-        Player player = (Player) sender;
-        if(!sender.hasPermission("helpsharp.reload")){
-            player.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.RED + "Help" + ChatColor.DARK_GRAY + "]" + ChatColor.GRAY+" You are lacking the permission "+ChatColor.WHITE+"helpsharp.reload "+ChatColor.GRAY+"to run this command.");
-            return true;
-        }
+    public boolean reload(){
         reloadConfig();
-        player.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.BLUE + "Help" + ChatColor.DARK_GRAY + "]" + ChatColor.GRAY+" Config reloaded successfully.");
         return true;
     }
 }
