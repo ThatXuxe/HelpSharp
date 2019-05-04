@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id'com.github.johnrengelman.shadow' version '4.0.4'
+}
+
+group 'io.github.hotlava03'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        url "https://hub.spigotmc.org/nexus/content/repositories/snapshots"
+        
+    }
+}
+
+apply plugin: "com.github.johnrengelman.shadow"
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compileOnly "org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT"
+}

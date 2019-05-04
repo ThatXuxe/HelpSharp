@@ -1,0 +1,18 @@
+######################
+## HelpSharp Config ##
+######################
+
+# Command name [EXPERIMENTAL AND MAY NOT WORK, RECOMMENDED NOT TO CHANGE]
+
+helpCmdName: 'help'
+
+# Server name, set to Server by default to make
+# sense when the command is ran.
+
+serverName: 'Server'
+
+# Server help message. To break line, type \n,
+# to use colors, use $<colorCode>. Example:
+# servHelpCmd: '&8- &7spawn: Teleports you to spawn. \n&8- &7tpa: Requests a user to teleport to them.'
+
+servHelpCmd: '&cHelp not set.'
